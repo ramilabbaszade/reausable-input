@@ -27,18 +27,17 @@ const Input = ({
     <textarea name="text" placeholder="Placeholder" rows={row}></textarea>
   ) : (
     <input
-      className={`${error && "error"} ${size} ${fullWidth && "fullWidth"}`}
+      className={`${error && "error"} ${size} ${fullWidth && "fullWidth"} ${(startIcon || endIcon) && 'input-icon'}`}
       type="text"
       value={value}
       placeholder="Placeholder"
-      style={startIcon && {border:'none'}}
     />
   );
 
   return (
     <div className={`input-container ${fullWidth && "fullWidth"}`}>
       <label className={`${error && "errorL"}`}>Label</label>
-      <div className={`input-icons`} style={startIcon && {border:'1px solid #828282'}}>
+      <div className={`input-icons`}>
         {startIcon && <span class="material-icons icon"> {startIcon} </span>}
         {result}
         {endIcon && <span class="material-icons icon"> {endIcon} </span>}
